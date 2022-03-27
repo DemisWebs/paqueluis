@@ -4,7 +4,7 @@
 if ( isset($_POST['email']) && isset($_POST['name']) && isset($_POST['subject']) && isset($_POST['message']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ) {
  
   // detect & prevent header injections
-  $test = "/(content-type|bcc:|cc:|to:)/i";
+  $test = "/(content-type|bcc:|cc:|to:demisjosefermin@gmail.com)/i";
   foreach ( $_POST as $key => $val ) {
     if ( preg_match( $test, $val ) ) {
       exit;
@@ -16,7 +16,7 @@ $headers = 'From: ' . $_POST["name"] . '<' . $_POST["email"] . '>' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
   //
-  mail( "demiscrack04@gmail.com", $_POST['subject'], $_POST['message'], $headers );
+  mail( "demisjosefermin@gmail.com", $_POST['subject'], $_POST['message'], $headers );
  
   //      ^
   //  Replace with your email 
